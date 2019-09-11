@@ -1,0 +1,142 @@
+/*Body and meta info like font and background color*/
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 5px 40px;
+  background-color: #2c2c2c;
+}
+/*Main logo this is a random svg I had that looked okay as a logo in the corner*/
+.wrench-logo {
+  height: 4rem;
+  float: left;
+  position: relative;
+  fill: #d9d8e1;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+}
+/*These are all the anchor tags that scroll people down to the right section*/
+.nav-links {
+  float: right;
+  margin-right: 20px;
+}
+
+.nav-links > a {
+  text-decoration: none;
+  color: #d9d8e1;
+  letter-spacing: 1.1px;
+  font-size: 3rem;
+  padding: 0px 5px;
+  margin: 0px 5px;
+  padding-right: 15px;
+  border-bottom-width: 10px;
+}
+/*Adds a border under the sections when hovered on*/
+.nav-links > a:hover {
+  color: #90c9d5;
+  border-bottom: 1px solid #d9d8e1;
+}
+/*Small border to give a little division to the nav elements*/
+.nav-about {
+  border-right: 1px solid #d9d8e1;
+}
+
+.nav-projects {
+  border-right: 1px solid #d9d8e1;
+}
+/*This makes the responsive hamburger disappear until the media query*/
+.nav .nav-btn {
+  display: none;
+}
+
+.nav #nav-check {
+  display: none;
+}
+/*All of the content for the middle of the landing page aka my name and title */
+.landing-page-wrapper {
+  height: 500px;
+  width: 100%;
+  display: inline-block;
+  margin-top: 20%;
+}
+
+.landing-page {
+  text-align: center;
+}
+
+.name-title {
+  font-size: 5em;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #d9d8e1;
+  margin-bottom: 0px;
+}
+
+.landing-page span {
+  border-top: 1px solid #d9d8e1;
+  display: inline-block;
+  width: 550px;
+  margin: 0px;
+  padding: 0px;
+}
+.name-subtitle {
+  font-size: 3em;
+  color: #90c9d5;
+  margin-top: 0px;
+}
+/*The beginning of making the website responsive */
+@media (max-width: 750px) {
+  .wrench-logo {
+    height: 2rem;
+    top: 10px;
+    left: -10px;
+  }
+  .nav .nav-links a {
+    border: none;
+  }
+  .nav .nav-links a:hover {
+    background-color: #424050;
+  }
+  .nav .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+  }
+  .nav .nav-btn label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 13px;
+  }
+  .nav .nav-btn label span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  .nav .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav .nav-links a {
+    display: block;
+    width: 100%;
+  }
+  .nav #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+  /*Mostly finished with the responsive redesign of the nav bar that might not work on Mozilla?*/
+}
